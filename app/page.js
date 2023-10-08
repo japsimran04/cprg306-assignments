@@ -10,6 +10,10 @@ export default function PageJS(){
       <nav>
       <Link href="/week2">Week-2</Link>
       </nav>
+      <nav>
+      <Link href ="/week3">week-3</Link>
+      </nav>
+  
     </>
   );
 }
