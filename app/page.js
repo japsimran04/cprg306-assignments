@@ -11,10 +11,13 @@ export default function PageJS(){
       <Link href="/week2">Week-2</Link>
       </nav>
       <nav>
-      <Link href ="/week3">week-3</Link>
+      <Link href ="/week3">Week-3</Link>
       </nav>
       <nav>
-      <Link href ="/week4">week-4</Link>
+      <Link href ="/week4">Week-4</Link>
+      </nav>
+      <nav>
+      <Link href ="/week5">Week-5</Link>
       </nav>
   
     </>
