@@ -16,21 +16,25 @@ export default function ItemList() {
             items.sort((a,b) => a.category.localeCompare(b.category));
         }
 
+        else if (sortBy == "Group category") {
+            items.sort((a,b) => a.Groupcategory.localeCompare(b.Groupcategory));
+        }
+
         return (
             <>
-                <div>
-                    <p>sortBy:</p>
-                </div>
 
                 <div>
-                <button className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
-                    onClick={() => setSortBy("name")}
-                Name</button>
-                
+                <p>Sort By:</p>
 
-                <button className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600">
-                    onClick={() => setSortBy("category")}
-                Category</button>
+                <button className="bg-orange-500 p-1 m-2 w-28" onClick={() => setSortBy("name")}>
+                Name
+                </button>
+                <button className="bg-orange-500 p-1 m-2 w-28" onClick={() => setSortBy("category")}>
+                Category
+                </button>
+                <button className="bg-orange-500 p-1 m-2 w-28" onClick={() => setSortBy(" Groupcategory")}>
+                Group Category
+                </button>
                 </div>
 
                 <div>
@@ -40,12 +44,10 @@ export default function ItemList() {
                     name={i.name}
                     quantity={i.quantity}
                     category={i.category}
-                    />
-                ))}
+                    Groupcategory={i.Groupcategory}/>))}
                 </div>
 
 
             </>
         )
-    
 }
