@@ -16,10 +16,6 @@ export default function ItemList() {
             items.sort((a,b) => a.category.localeCompare(b.category));
         }
 
-        else if (sortBy == "Group category") {
-            items.sort((a,b) => a.Groupcategory.localeCompare(b.Groupcategory));
-        }
-
         return (
             <>
 
@@ -32,9 +28,6 @@ export default function ItemList() {
                 <button className="bg-orange-500 p-1 m-2 w-28" onClick={() => setSortBy("category")}>
                 Category
                 </button>
-                <button className="bg-orange-500 p-1 m-2 w-28" onClick={() => setSortBy(" Groupcategory")}>
-                Group Category
-                </button>
                 </div>
 
                 <div>
@@ -43,8 +36,7 @@ export default function ItemList() {
                     key={index}
                     name={i.name}
                     quantity={i.quantity}
-                    category={i.category}
-                    Groupcategory={i.Groupcategory}/>))}
+                    category={i.category}/>))}
                 </div>
 
 
