@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 export default function NewItem() {
+
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
@@ -16,7 +17,7 @@ export default function NewItem() {
         };
 
         console.log(item);
-        alert(`Name of an Item: ${name}, \nQuantity: ${quantity}, \nCategory: ${category}`);
+        alert(`Name of an Item: ${name} \nQuantity: ${quantity} \nCategory: ${category}`);
 
         setName("");
         setQuantity(1);
@@ -26,14 +27,16 @@ export default function NewItem() {
     return (
         <div className="flex justify-center w-full bg-black">
             <form onSubmit={handleSubmit} className="p-2 m-4 bg-slate-900 text-black max-w-sm w-full">
+
             <div className="mb-2">
 
             <input className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
-            type="text"
-            id="Name"
+            type= "text"
+            id= "name"
+            value= {name}
             placeholder= "Item name"
-            required
-            oneChange= {(e) => setName(e.target.value)}/>
+            oneChange= {(e) => setName((e.target.value))} 
+            required />
             </div>
 
             <div className="mb-2">
@@ -44,16 +47,16 @@ export default function NewItem() {
             min= "1"
             max= "99"
             value= {quantity}
-            required
-            onChange= {(e) => setQuantity(Number(e.target.value))} />
+            onChange= {(e) => setQuantity(Number(e.target.value))}
+            required />
             </div>
 
             <div className="mb-2">
 
 
             <select 
-               id="category"
-               value={category}
+               id= "category"
+               value= {category}
                required
                onChange={(e) => setCategory(e.target.value)} className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans">
 
@@ -70,8 +73,8 @@ export default function NewItem() {
                 <option value= "other">Other</option>
             </select>
             </div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"onClick={handleSubmit} type="submit">
-                submit
+            <button className="w-full mt-4 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"onClick={handleSubmit} type="submit">
+                +
             </button>
             </form>
         </div>

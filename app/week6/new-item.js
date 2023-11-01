@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 
-export default function NewItem() {
+export default function NewItem({ onAddItem }) {
+
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState(1);
     const [category, setCategory] = useState("produce");
@@ -15,44 +16,44 @@ export default function NewItem() {
             category: category
         };
 
-        console.log(item);
-        alert(`Name of an Item: ${name}, \nQuantity: ${quantity}, \nCategory: ${category}`);
+        //console.log(item);
+        //alert(`Name of an Item: ${name} \nQuantity: ${quantity} \nCategory: ${category}`);
 
         setName("");
         setQuantity(1);
         setCategory("produce");
+
+        onAddItem (item);
+
     };
 
     return (
-        
-        <div className="flex justify-between w-full bg-slate-900">
+        <div className="flex justify-between w-full"> 
             <form onSubmit={handleSubmit} className="p-2 m-4 bg-slate-900 text-black max-w-sm w-full">
-            <div className="mb-2">
-            <h2 className="text-xl text-white font-bold">Add New Item</h2>
 
+            <div className="mb-2">
+            <h3 class="text-xl text-white font-bold m-2">Add New Item</h3>
             <input className="w-full mt-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
-            type="text"
-            id="Name"
+            type= "text"
+            id= "name"
             placeholder= "Item name"
-            required
-            oneChange= {(e) => setName(e.target.value)}/>
+            oneChange= {(e) => setName((e.target.value))} 
+            required />
             </div>
 
             <div className="mb-2">
-            
             <input className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
             type= "number"
             id= "quantity"
             min= "1"
             max= "99"
             value= {quantity}
-            required
-            onChange= {(e) => setQuantity(Number(e.target.value))} />
-
-
+            onChange= {(e) => setQuantity(Number(e.target.value))}
+            required />
+            
             <select 
-               id="category"
-               value={category}
+               id= "category"
+               value= {category}
                required
                onChange={(e) => setCategory(e.target.value)} className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans">
 
