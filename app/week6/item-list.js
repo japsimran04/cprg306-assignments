@@ -19,7 +19,7 @@ export default function ItemList() {
         return (
             <>
 
-                <div>
+                <div> 
                 <label for="sort" className="text-white">Sort by: </label>
                 <button className="bg-orange-500 p-1 m-2 w-28" onClick={() => setSortBy("name")}>
                 Name

@@ -19,6 +19,9 @@ export default function PageJS(){
       <nav>
       <Link href ="/week5">Week-5</Link>
       </nav>
+      <nav>
+      <Link href ="/week6">Week-6</Link>
+      </nav>
   
     </>
   );
