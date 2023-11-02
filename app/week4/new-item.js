@@ -33,9 +33,9 @@ export default function NewItem() {
             <input className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
             type= "text"
             id= "name"
-            value= {name}
             placeholder= "Item name"
-            oneChange= {(e) => setName((e.target.value))} 
+            value={name}
+            onChange= {(e) => setName((e.target.value))} 
             required />
             </div>
 
@@ -52,14 +52,11 @@ export default function NewItem() {
             </div>
 
             <div className="mb-2">
-
-
             <select 
                id= "category"
                value= {category}
                required
                onChange={(e) => setCategory(e.target.value)} className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans">
-
                 <option value= "produce">Produce</option>
                 <option value= "dairy">Dairy</option>
                 <option value= "bakery">Bakery</option>
@@ -77,10 +74,6 @@ export default function NewItem() {
                 +
             </button>
             </form>
-        </div>
-        
+        </div>        
     );
-
-
-
 }
