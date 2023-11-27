@@ -21,16 +21,16 @@ export default function page() {
     }
 
     return (
-        <>
-        <main className="bg-slate-900">
-            <h1 className="text-3xl text-white font-bold m-2">Shopping list</h1>
-            <NewItem onAddItem ={handleAddItem} />
-            <ItemList items = {items} onItemSelect={handleItemSelect}/>
-
-            <div className="bg-slate-900">
-                <MealIdea ingredient={selectItemName}/>
-            </div>
+        <main className="bg-zinc-400 flex">
+        <div>
+          <h1 className="text-3xl text-white font-bold m-2">Shopping List</h1>
+          <NewItem onAddItem={handleAddItem} />
+            <ItemList items={items} onItemSelect={handleItemSelect}/>
+        </div>
+        <div className="bg-zinc-400">
+          <MealIdea ingredient={selectItemName}/>
+        </div>    
         </main>
-        </>
     );
+    
 }
